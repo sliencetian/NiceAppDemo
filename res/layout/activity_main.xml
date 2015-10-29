@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00aac6" >
+
+    <!--
+       侧拉时出现的圆圈图案执行旋转动画
+       ptr:ptrAnimationStyle="rotate_and_anim"
+       替换侧拉时出现的图案为loading_1
+       ptr:ptrDrawable="@drawable/loading_1"
+       设置侧拉模式为左右都可以侧拉
+       ptr:ptrMode="both"
+       刷新的时候，是否允许ViewPager滚动
+       ptr:ptrScrollingWhileRefreshingEnabled="false"
+    -->
+
+    <com.handmark.pulltorefresh.extras.viewpager.PullToRefreshViewPager
+        xmlns:ptr="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50.0dip"
+        ptr:ptrDrawable="@drawable/loading_1"
+        ptr:ptrMode="both"
+        ptr:ptrScrollingWhileRefreshingEnabled="false" />
+
+    <com.tz.niceappdemo.control.RhythmLayout
+        android:id="@+id/box_rhythm"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/rhythm_layout_height"
+        android:layout_alignParentBottom="true"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" />
+    </com.tz.niceappdemo.control.RhythmLayout>
+
+</RelativeLayout>
